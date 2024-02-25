@@ -210,3 +210,29 @@ ORDER BY 1 DESC
 How much revenue is generated each year, and what is its percent change 84 from the previous year?
 Hint: The InvoiceDate field is formatted as ‘yyyy-mm-dd hh:mm:ss’. Try taking a look at using the strftime() function to help extract just the year. Then, we can use a subquery in the SELECT statement to query the total revenue from the previous year. Remember that strftime() returns the date as a string, so we would need to CAST it to an integer type for this part. Finally, since we cannot refer to a column alias in the SELECT statement, it may be useful to use the WITH clause to query the previous year total in a temporary table, and then calculate the percent change in the final SELECT statement.*/
 
+WITH YearlyRevenue AS (
+  SELECT
+    SUM(Total) AS revenue,
+    strftime('%Y', InvoiceDate) AS year
+  FROM invoices
+  GROUP BY year
+),
+RevenueWithPreviousYear AS (
+  SELECT
+    year,
+    revenue,
+    LAG(revenue, 1) OVER (ORDER BY year) AS previous_year_revenue
+  FROM YearlyRevenue
+)
+
+SELECT
+  year,
+  revenue,
+  previous_year_revenue,
+  CASE
+    WHEN previous_year_revenue IS NULL THEN NULL -- Handles the first year where there is no previous year revenue
+    ELSE (revenue - previous_year_revenue) / previous_year_revenue * 100
+  END AS percentage_variation
+FROM RevenueWithPreviousYear
+ORDER BY year;
+
