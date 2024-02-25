@@ -1,6 +1,75 @@
-CREATE TABLE creates a new table.
-INSERT INTO adds a new row to a table.
-SELECT queries data from a table.
-ALTER TABLE changes an existing table.
-UPDATE edits a row in a table.
-DELETE FROM deletes rows from a table.
+you:
+give me an extense list of SQL commands and operators
+ChatGPT
+SQL (Structured Query Language) is rich in commands and operators, enabling a wide range of operations from data query and manipulation to database structure modification and control flow. Here is an extensive list of SQL commands and operators to give you a comprehensive overview:
+
+Data Query Language (DQL)
+SELECT: Retrieves data from one or more tables.
+FROM: Specifies the table to retrieve data from.
+WHERE: Filters rows based on specified conditions.
+GROUP BY: Groups rows sharing a property so that aggregate functions can be applied to each group.
+HAVING: Filters groups based on specified conditions.
+ORDER BY: Specifies the order in which to return the rows.
+Data Manipulation Language (DML)
+INSERT INTO: Inserts new rows into a table.
+UPDATE: Modifies existing rows in a table.
+DELETE: Removes existing rows from a table.
+Data Definition Language (DDL)
+CREATE TABLE: Creates a new table.
+ALTER TABLE: Modifies the structure of an existing table.
+DROP TABLE: Deletes a table.
+TRUNCATE TABLE: Removes all rows from a table without logging the individual row deletions.
+CREATE INDEX: Creates an index on a table column.
+DROP INDEX: Deletes an index.
+Data Control Language (DCL)
+GRANT: Gives user's access privileges to the database.
+REVOKE: Removes user's access privileges.
+Transaction Control Language (TCL)
+COMMIT: Commits the current transaction.
+ROLLBACK: Rolls back the current transaction.
+SAVEPOINT: Sets a savepoint within a transaction.
+SET TRANSACTION: Places a name on a transaction.
+Operators
+Arithmetic Operators: +, -, *, /, % for basic mathematical operations.
+Comparison Operators: =, >, <, >=, <=, <> or != for comparing values.
+Logical Operators: AND, OR, NOT for combining Boolean conditions.
+BETWEEN: Checks if a value is within a range.
+LIKE: Searches for a specified pattern in a column.
+IN: Checks if a value is within a set of values.
+IS NULL: Checks for NULL values.
+EXISTS: Tests for the existence of any record in a subquery.
+ANY and ALL: Compare a value to each value in a list or returned by a subquery.
+UNION, UNION ALL: Combines the result sets of two or more SELECT statements.
+INTERSECT: Returns the intersection of the result sets of two SELECT statements.
+EXCEPT: Returns the difference between the result sets of two SELECT statements.
+Constraints
+PRIMARY KEY: Uniquely identifies each row in a table.
+FOREIGN KEY: Enforces a link between the data in two tables.
+UNIQUE: Ensures that all values in a column are different.
+NOT NULL: Ensures that a column cannot have a NULL value.
+CHECK: Ensures that the values in a column satisfy a specific condition.
+DEFAULT: Sets a default value for a column when no value is specified.
+Other Keywords
+CASE: Provides IF-THEN-ELSE logic within an SQL statement.
+CAST: Converts a value from one data type to another.
+CONVERT: Similar to CAST, converts a value from one type to another.
+JOIN: Combines rows from two or more tables based on a related column.
+Types of joins include INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, CROSS JOIN, etc.
+This list covers many of the core SQL commands and operators, but SQL's full scope includes many more functions, clauses, and features specific to different SQL database systems (e.g., MySQL, PostgreSQL, SQL Server, etc.). Each system may have its own extensions and specific functionalities not covered in this general overview.
+
+
+
+
+Let’s summarize:
+
+SELECT is the clause we use every time we want to query information from a database.
+AS renames a column or table.
+DISTINCT return unique values.
+WHERE is a popular command that lets you filter the results of the query based on conditions that you specify.
+LIKE and BETWEEN are special operators.
+AND and OR combines multiple conditions.
+ORDER BY sorts the result.
+LIMIT specifies the maximum number of rows that the query will return.
+CASE creates different outputs.
+
+name	location	category	employees	raised	valuation	founded	stage	ceo	info

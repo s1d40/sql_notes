@@ -1,0 +1,66 @@
+Project: Exploring a SQLite Sample Database
+This project will take you off-platform and get you started in your own developer environment! Never done that before? Not to worry - we’ve shared some resources to help you down below. This project can be completed entirely on your own - or, you can join our Community Discord 235 and find someone to work with! Jump to the community support section to hear more about this.
+
+This project is broken down into key questions that your client or company is looking to answer. As a data scientist, you’ll often become a resource to help businesses answer the key questions about the efficacy of existing or potential strategies & projects.
+
+Overview
+Objective
+You are the lead data analyst for a popular music store. Help them analyze their sales and service! Download the SQLite sample database provided here 2.5k.
+
+Pre-requisites
+In order to complete this project, we suggest that you have familiarity with the content in the following courses or lessons on the Codecademy platform:
+
+Manipulation 356
+Queries 77
+Aggregate Functions 68
+Multiple Tables 108
+Suggested Technologies
+Depending on where you are on your Path, there may be multiple technology options you can use to complete this project - we suggest the following:
+
+DB Browser for SQLite 1.4k
+Project Tasks
+Get started - hosting your project
+DB Browser for SQLite 1.4k is a visual tool for working with SQLite databases. Follow the link to download the application for your computer.
+
+
+
+SQLite can store an entire database in a single file, which usually has a .sqlite or .db extension. To open a database, select Open Database at the top of the window and browse for the file. Alternatively, you can choose to create a New Database by saving a file with the .sqlite or .db extension.
+To import data from a CSV file into a table, select “File > Import > Table from CSV file…” and browse for the CSV file. (Note: All fields imported from the CSV file will have a data type of TEXT. Be sure to convert fields to numeric type as needed. See here 119 for how to do that.)
+You can download the data you’ll be using for this specific project here 2.5k.
+
+
+There are several tabs near the top of the window for working with the data:
+
+Database Structure: View the tables in your database and the columns they contain.
+Browse Data: Browse the data for each table.
+Execute SQL: Write and execute SQL queries.
+Basic Requirements
+Let’s break this project down into a couple different parts.
+
+Analyzing the Data:
+
+Which tracks appeared in the most playlists? how many playlist did they appear in?
+
+Which track generated the most revenue? which album? which genre?
+
+Which countries have the highest sales revenue? What percent of total revenue does each country make up?
+
+How many customers did each employee support, what is the average revenue for each sale, and what is their total sale?
+
+Additional Challenges
+
+
+Intermediate Challenge
+
+Do longer or shorter length albums tend to generate more revenue?
+Hint: We can use the WITH clause to create a temporary table that determines the number of tracks in each album, then group by the length of the album to compare the average revenue generated for each.
+
+    
+Is the number of times a track appear in any playlist a good indicator of sales?
+Hint: We can use the WITH clause to create a temporary table that determines the number of times each track appears in a playlist, then group by the number of times to compare the average revenue generated for each.
+
+
+Advanced Challenge
+
+How much revenue is generated each year, and what is its percent change 84 from the previous year?
+Hint: The InvoiceDate field is formatted as ‘yyyy-mm-dd hh:mm:ss’. Try taking a look at using the strftime() function to help extract just the year. Then, we can use a subquery in the SELECT statement to query the total revenue from the previous year. Remember that strftime() returns the date as a string, so we would need to CAST it to an integer type for this part. Finally, since we cannot refer to a column alias in the SELECT statement, it may be useful to use the WITH clause to query the previous year total in a temporary table, and then calculate the percent change in the final SELECT statement.

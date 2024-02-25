@@ -1,0 +1,17 @@
+Question
+When writing SQL queries, do the commands, like SELECT and FROM have to be all capital letters?
+
+ChatGPT
+In SQL, the use of uppercase or lowercase for commands like SELECT, FROM, and others is not mandatory because SQL is case-insensitive for its keywords. This means that the SQL engine treats SELECT, select, and even SeLeCt as equivalent. However, it's a widely adopted convention to write SQL keywords in uppercase to improve the readability and maintainability of the code. This practice helps differentiate SQL keywords from table names, column names, and other identifiers, especially since identifiers might be case-sensitive depending on the database system you're using.
+
+For example, both of these queries are valid and functionally equivalent:
+
+sql
+Copy code
+SELECT * FROM my_table WHERE column_name = 'value';
+sql
+Copy code
+select * from my_table where column_name = 'value';
+Despite the technical allowance for case variability, adhering to the convention of using uppercase for SQL keywords is recommended. It aligns with best practices and makes your SQL scripts easier to read and understand for you and others, especially in collaborative environments or when sharing your work publicly, as in a GitHub repository for your SQL learning projects and notes.
+
+
